@@ -66,7 +66,8 @@
                 6.2 定性指標からの仮説立案
         
 #### Capture 6 データ駆動を最適化させる開発プロセス
-        1 Agile/Lean/DataScience
+        1 データ駆動な開発プロセスとは 
+        Agile/Lean/DataScience
         2 アジャイルマーケティング
         
         
