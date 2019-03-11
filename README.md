@@ -77,12 +77,8 @@
         2 BMLループで開発を駆動させる
                 2.1 BMLループとその流れ
                 2.2 「Learn → Idea」時に行うこと
-                2.3 「Idea → Build」時に行うこと
-                2.4 「Build → Measure」時に行うこと
-                2.5 「」
-             
-         
-                
+                2.3 「Build → Product」時に行うこと
+                2.4 「Measure → Data」時に行うこと
         3 アジャイルマーケティング
         
         
