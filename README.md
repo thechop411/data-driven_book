@@ -93,7 +93,7 @@
 #### Capture 8 解説 (DMM.com CTO松本さん)
 
 
-#### リファレンス
+###### リファレンス
 - [DMMにおけるユーザーレビュー基盤の変革(データ駆動戦略を実現する『三種の神器』編)【Developers Summit 2019】](https://inside.dmm.com/entry/2019/02/19/devsumi-datadriven)
 - [データ駆動のデータ分析プロセス](https://medium.com/i35-267/b52e75312667)
 - [データ分析アプローチには3グループの観点が必要](https://medium.com/i35-267/7bf3aa6c1067)
