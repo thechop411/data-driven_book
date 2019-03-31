@@ -77,13 +77,12 @@
         
         
 #### Capture 6 最適化させた開発プロセスでデータ駆動を加速させる
-        1 データ駆動な開発プロセスとは 
-                1.1 Agile/Lean/DataScience
-        2 BMLループで開発を駆動させる
-                2.1 BMLループとその流れ
-                2.2 「Learn → Idea」(TODO)
-                2.3 「Build → Product」(TODO)
-                2.4 「Measure → Data」(TODO)
+        1 DevOps x Data-Driven 
+        2 リーン・スタートアップのBMLループで開発を駆動させる
+                2.1 BMLループとは
+                2.2 Learn → Idea
+                2.3 Build → Product
+                2.4 Measure → Data
         3 マーケティングもアジャイルで最適化する〜アジャイルマーティング〜
                 3.1 アジャイルマーケティングとは
                 3.1 キャンペーンにおけるアジャイル手法
