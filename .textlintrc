@@ -1,0 +1,38 @@
+{
+    "rules": {
+        "preset-ja-technical-writing": {
+            // 1文の長さは130文字以下に緩和
+            "sentence-length": {
+              max: 130
+            },
+            // 読点は1文中に4つまでに緩和
+            "max-ten": {
+              max: 4
+            },
+            // 漢数字と算用数字を使い分けない
+            "arabic-kanji-numbers": false,
+            // 文末許可に追加
+            "ja-no-mixed-period": {
+              "allowPeriodMarks": ["..."]
+            },
+            // 助詞の連続に関する設定
+            "no-doubled-joshi": {
+              "allow": ["に","も","や"],
+              "separatorChars": ["。","?","!","？","！","(",")","（","）"]
+            },
+            // 感嘆符許可
+            "no-exclamation-question-mark": false,
+            // 弱い日本語表現の利用を許可
+            "ja-no-weak-phrase": false
+        },
+        // 表記揺れ、単語チェック
+        "spellcheck-tech-word": true
+    },
+    "filters": {
+        "whitelist": {
+            "whitelistConfigPaths": [
+                "allow.yml"
+            ]
+        }
+    }
+}

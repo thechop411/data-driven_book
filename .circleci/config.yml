@@ -1,0 +1,21 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/data-driven_book
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: execute textlint
+          command: |
+            files=$(git diff --name-only --diff-filter=dr origin/master | grep 'capture_*/.*\.md$') || true
+            if [ -n "$files" ]; then $(npm bin)/textlint $files; fi
