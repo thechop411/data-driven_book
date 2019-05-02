@@ -105,3 +105,4 @@
 - [データ分析アプローチには3グループの観点が必要](https://medium.com/i35-267/7bf3aa6c1067)
 - [グロースハックを支える先行指標〜相関関係と因果関係〜](https://medium.com/i35-267/45eab3e91d1)
 - [ユーザーレビューにおけるエンゲージメント指標とエンゲージメントファネル](https://medium.com/i35-267/9fa4b793394d)
+- [Data-Informed Product Building](https://medium.com/sequoia-capital/data-informed-product-building-1e509a5c4112)
