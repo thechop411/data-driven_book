@@ -2,7 +2,7 @@
 <html>
   <head>
       <meta charset="utf-8" />
-      <title>はじめに</title>
+      <title>はじめに</title>
       <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(56, 58, 66); background-color: rgb(250, 250, 250); overflow: auto; }
 .markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
 .markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(0, 0, 0); }
@@ -103,8 +103,185 @@
 .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
 .markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
 .markdown-preview ul label { vertical-align: top; }
+.markdown-preview { font-family: HelveticaNeue; }
 .markdown-preview.markdown-preview { font-size: 10px; }
-.markdown-preview-enhanced-custom { font-size: 10px; }
+.gutter .atom-debug-ui-gutter {
+  height: 7px !important;
+  width: 7px;
+  display: block;
+  margin-left: 2px;
+  margin-top: 6px;
+  border-radius: 50%;
+}
+.gutter .atom-debug-ui-gutter.highlight {
+  background-color: #1f96ff;
+  color: white;
+}
+.gutter > .line-numbers > .atom-debug-ui-breakpoint,
+.gutter > .line-numbers > div > .atom-debug-ui-breakpoint,
+.gutter > .line-numbers > .tile > .atom-debug-ui-breakpoint {
+  color: #fff;
+  background-color: #0F0 !important;
+}
+.debug-break-break {
+  background-color: rgba(59, 186, 84, 0.25) !important;
+}
+.debug-break-generic {
+  background-color: rgba(59, 186, 84, 0.25) !important;
+}
+.debug-break-error,
+.debug-break-exception {
+  background-color: rgba(224, 75, 62, 0.15) !important;
+}
+.atom-debug-ui {
+  overflow: auto;
+}
+.atom-debug-ui-console {
+  padding-top: 10px;
+}
+.atom-debug-ui-debug-console-view {
+  margin: 0 10px 10px 10px;
+}
+.atom-debug-ui-unified-view {
+  height: 100%;
+  margin: 10px;
+}
+.atom-debug-ui-debug-view-toggle,
+.atom-debug-ui-console-view-toggle {
+  display: inline-block;
+  color: #8e8e90;
+  border: 1px solid #dbdbdc;
+  background: rgba(255, 255, 255, 0.33);
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  padding: 0 .6em;
+  line-height: 1.8em;
+  margin-right: 0.6em;
+}
+.atom-debug-ui-debug-view-toggle:active,
+.atom-debug-ui-console-view-toggle:active {
+  background: transparent;
+}
+.atom-debug-ui-debug-view-toggle.active,
+.atom-debug-ui-console-view-toggle.active {
+  color: #232324;
+  background: #ffffff;
+}
+
+@keyframes RotatingBackground {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
+
+.debugger-breakpoint-icon::before,
+.debugger-shadow-breakpoint-icon::before {
+  font-family: 'Octicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size: 130%;
+  width: 130%;
+  height: 130%;
+  content: "\f052";
+}
+.debugger-breakpoint-icon,
+.debugger-breakpoint-icon-disabled,
+.debugger-breakpoint-icon-unresolved,
+.debugger-breakpoint-icon-conditional,
+.debugger-shadow-breakpoint-icon {
+  text-align: center;
+  display: block;
+  width: 0.8em;
+  cursor: pointer;
+}
+.debugger-breakpoint-icon-nonconditional {
+  color: #1492ff;
+}
+.debugger-breakpoint-icon-conditional {
+  color: #d5880b;
+}
+.debugger-breakpoint-icon-disabled {
+  position: relative;
+  top: -4px;
+  left: 2px;
+}
+.debugger-breakpoint-icon-disabled::before {
+  font-family: 'Octicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size: 78%;
+  width: 78%;
+  height: 78%;
+  content: "\f084";
+}
+.debugger-breakpoint-icon-unresolved {
+  position: relative;
+  top: -2px;
+}
+.debugger-breakpoint-icon-unresolved::before {
+  font-family: 'Octicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size: 80%;
+  width: 80%;
+  height: 80%;
+  content: "\f0e8";
+}
+.debugger-shadow-breakpoint-icon {
+  color: rgba(20, 146, 255, 0.4);
+}
+.debugger-current-line-highlight {
+  background: linear-gradient(to bottom, rgba(31, 150, 255, 0.8) 0%, rgba(31, 150, 255, 0.8) 5%, rgba(31, 150, 255, 0.3) 5%, rgba(31, 150, 255, 0.3) 95%, rgba(31, 150, 255, 0.8) 95%, rgba(31, 150, 255, 0.8) 100%);
+}
+
+.gutter[gutter-name=diagnostics-gutter] {
+  width: 0.7em;
+}
+.diagnostics-gutter-ui-item {
+  display: flex;
+}
+.diagnostics-gutter-ui-item .icon {
+  display: flex;
+  width: 0.7em;
+  height: 0.7em;
+  font-size: 0.7em;
+  align-self: center;
+}
+.diagnostics-gutter-ui-item .icon::before {
+  width: 1em;
+  height: 1em;
+  font-size: 1em;
+  margin: 0;
+  align-self: center;
+}
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-info,
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-review {
+  color: #1492ff;
+}
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-error {
+  color: #f42a2a;
+}
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-action,
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-warning {
+  color: #d5880b;
+}
+
 .bracket-matcher .region {
   border-bottom: 1px dotted lime;
   position: absolute;
@@ -140,12 +317,6 @@
 .php-debug-pathmaps-view .btn-ignore {
   float: right;
 }
-.php-debug-pathmaps-view .pathmaps-extra {
-  margin-top: 0.5em;
-}
-.php-debug-pathmaps-view .pathmaps-important {
-  font-weight: bold;
-}
 .php-debug-pathmaps-view .pathmaps-settings-actions {
   margin-top: 1.5em;
 }
@@ -164,27 +335,6 @@
 }
 .spell-check-corrections {
   width: 25em !important;
-}
-
-.highlight.sameid .region {
-  background-color: #e5e5e6;
-}
-
-.highlight.uncovered .region {
-  background-color: #e04b3e;
-  opacity: 0.2;
-}
-.highlight.covered .region {
-  background-color: #3bba54;
-  opacity: 0.2;
-}
-.line-number.uncovered {
-  color: #050505 !important;
-  background-color: #e04b3e;
-}
-.line-number.covered {
-  color: #050505 !important;
-  background-color: #3bba54;
 }
 
 pre.editor-colors {
@@ -652,29 +802,55 @@ pre.editor-colors .fold-marker:after {
   </head>
   <body class='markdown-preview' data-use-github-style><h3 id="-">はじめに</h3>
 <h4 id="-">プロダクト開発の「不確実性」とどうやって戦うか</h4>
-<p>日々、自問自答している。<br><br>「どうやったら多くのユーザーにプロダクトを利用してもらえるか」<br>「そもそも何を作るべきか」<br>「どのように作るべきか」<br></p>
-<p>しかし、いくら自問自答をしても、いっこうに正解は見当たらないし銀の弾丸も見つからない。<br>すべて満足のいく結果にはならないし、日々変化していく環境の中で常に選択を迫られている。プロダクト開発は多くの「不確実性」が周りを取り巻いていて、これをやれば必ず成功するということはなく日々「不確実性」という名の荒波に晒されながら、私たちはプロダクト開発をしている。</p>
-<p>では、どうやって「不確実性」と戦っていけば良いのでしょうか。<br>周りの見れば、技術やテクノロジーは日々進化し続け、数年前までは想像もできなかったことが今ではいとも簡単にできることへと変換され、それが数年のスパンでやってきます。それと同時に廃れていくものも生まれ、プロダクト開発は日々変化に順応していくことが求められます。<br>何も進化せずに勝手にグロースしていくプロダクトなど存在しません。</p>
-<p>また、環境の変化によってユーザーのニーズも複雑化していき、ユーザー自身も現在の自分に何が必要なのかわからない。つまり、私たちがプロダクトを提供するべきユーザー自身も答えを持っていないのです。</p>
-<p>そんな誰も正解を持っていない中、私たちはプロダクト開発しなければなりません。<br>「不確実性」が高い中で、正解がないものを作るということは、すべては「仮説」だということです。<br>このプロダクトが市場には必要で、そのプロダクトにはこういった機能が備わっており、こういうユーザーインタフェースであったほうが、ユーザーによって「きっと」便利であろうと考えています。<br></p>
-<p>そんな「仮説」と「正解」の間で、私たちはどんな「武器」を持って戦っていくべきなのでしょうか。<br>私は、数年に渡りプロダクト開発をする中で、組織に「アジャイル開発」を浸透させることに奮闘し、小さく早くプロダクト作ることでユーザーの反応から学びながら開発することを意識しました。本当にユーザーに必要なものは何かを探りながら、仮説検証のサイクルを回して、本当にユーザーが必要なものを効率よく開発し、ユーザーに提供していくことを繰り返しました。</p>
-<p>しかし、すべてのプロダクトが100％満足のいく機能を提供できていることはないし、苦労しなかったプロダクト開発はなかった。すべて成功かといえば全然足りていない。</p>
-<p>ではどうすれば良かったのか。<br>答えは簡単で「不確実性」を下げられれば良かったのです。よりプロダクト開発の周りにある確実性を高くすることで、提供する機能がよりユーザーに受け入れられていく確率が上げる。そうすれば、より多くのユーザーに利用される機能を効率よく開発して、沢山のユーザーに届けることができる。</p>
-<p>しかし、簡単なことではありません。至難の技とも言えます。<br>一方、世の中には見渡してみると「不確実性」を下げる解決法はいくつか存在します。アジャイル開発やリーン・スタートアップの考え方もその一種です。<br>「プロダクト開発において確実なものなど存在しない。失敗することが前提」という考えのもと、いかにプロダクトにおける最小限の機能であるMVP（Minimum Viable Product）を構築してすばやく市場へ投入できるか。そこからユーザーの反応を見て、学習して再び市場へ投入する。改善点をユーザーの反応から学びプロダクトをより良いものへ仕上げていくことで、ウォーターフォールにはなかった長期間かけて完璧だと思うプロダクトをリリースしてユーザーの反応を見るという「一発勝負」的な要素をなくします。いかに失敗しながら、徐々に不確実性を下げていって良いプロダクトを提供していくかということです。</p>
-<p>私はこの考え方がとても有効だと思っています。<br>実際に私が所属しているDMM.comの組織の中でも当たり前のようにアジャイル開発をしているし、組織全体の浸透率を見てもとても良いソリューションだと思っています。</p>
-<p>しかし、同時にこの「アジャイル開発」をより進化させられると感じています。<br>より、プロダクト開発における「不確実性」を下げることができて、それに伴う組織のさまざまな意思決定も高速化できる。そして、アジャイル開発といった開発プロセスに融合させる形で。</p>
-<p>それは「データ駆動」という考え方です。</p>
+<p>日々、自問自答している。<br>
+「どうやったら多くのユーザーにプロダクトを利用してもらえるか」<br>「そもそも何を作るべきか」<br>「どのように作るべきか」<br></p>
+<p>しかし、いくら自問自答をしても、いっこうに正解は見当たらないし銀の弾丸も見つからない。
+すべて満足のいく結果にはならないし、日々変化していく環境の中で常に選択を迫られている。プロダクト開発は多くの「不確実性」が周りを取り巻いていて、これをやれば必ず成功するということはなく日々「不確実性」という名の荒波に晒されながら、私たちはプロダクト開発をしている。</p>
+<p>では、どうやって「不確実性」と戦っていけば良いのでしょうか。
+周りの見れば、技術やテクノロジーは日々進化し続け、数年前までは想像もできなかったことが今ではいとも簡単にできることへと変換され、それが数年のスパンでやってきます。それと同時に廃れていくものも生まれ、プロダクト開発は日々変化に順応していくことが求められます。
+何も進化せずに勝手にグロースしていくプロダクトなど存在しません。</p>
+<p>また、環境の変化によってユーザーのニーズも複雑化しています。
+プロダクトを開発している側も、ユーザー自身も現在の自分にどんなプロダクトが必要なのかわからない。つまり、私たちがプロダクトを提供するべきユーザー自身も答えを持っていないのです。</p>
+<p>そんな誰も正解を持っていない中、私たちはプロダクト開発しなければなりません。
+「不確実性」が高い中で、正解がないものを作るということは、すべては「仮説」だということです。<br>このプロダクトが市場には必要で、そのプロダクトにはこういった機能が備わっており、こういうユーザーインタフェースであったほうが、ユーザーによって「きっと」便利であろうと考えています。<br></p>
+<p>そんな「仮説」と「正解」の間で、私たちはどんな「武器」を持ってこれから戦っていくべきでしょうか。
+私は、数年に渡りプロダクト開発をする中で、組織に「アジャイル開発」を浸透させることに奮闘し、小さく早くプロダクト作ることでユーザーの反応から学びながら開発することを意識してきました。本当にユーザーに必要なものは何かを探りながら、仮説検証のサイクルを回して、本当にユーザーが必要なものを効率よく開発していかに早くユーザーに提供していくかを考えたプロダクト開発をしてきました。</p>
+<p>しかし、すべてのプロダクトが100％満足のいく機能を提供できていることはないし、苦労しなかったプロダクト開発はありません。すべて成功かといえば全然足りていない。</p>
+<p>ではどうすれば良かったのか。
+答えは簡単で「不確実性」を下げられれば良かったのです。よりプロダクト開発の「確実性」を上げることで、提供する機能がよりユーザーに受け入れられる確率が上げる。そうすれば、より多くのユーザーに利用される機能を効率よく開発して、沢山のユーザーに届けることができる。
+しかし、当然簡単なことではありません。至難の技とも言えます。</p>
+<p>一方、世の中には見渡してみると「不確実性」を下げる解決法はいくつか存在します。アジャイル開発やリーン・スタートアップの考え方もその一種です。
+「プロダクト開発において確実なものなど存在しない。失敗することが前提」という考えのもと、いかにプロダクトにおける最小限の機能であるMVP（Minimum Viable Product）を構築してすばやく市場へ投入できるか。そこからユーザーの反応を見て、学習して再び市場へ投入する。改善点をユーザーの反応から学びプロダクトをより良いものへ仕上げていくことで、ウォーターフォールにはなかった長期間かけて完璧だと思うプロダクトをリリースしてユーザーの反応を見るという「一発勝負」的な要素をなくしました。いかに失敗を繰り返しながら、徐々に不確実性を下げていって良いプロダクトを提供していくという考え方です。</p>
+<p>私はこの考え方がとても好きです。
+実際に私が所属しているDMM.comの組織の中でも当たり前のようにアジャイル開発をしているし、組織全体の浸透率を見ても良いソリューションです。</p>
+<p>しかし、同時にこの「アジャイル開発」をより進化させられると感じています。
+ここにある「要素」を加えることで、プロダクト開発における「不確実性」をより下げることができて、さらに組織内のさまざまな意思決定も高速化できる。しかも、アジャイル開発でなくすのではなく融合させる形で。</p>
+<p>その要素とは「データ駆動」です。</p>
 <h4 id="-">「データ駆動」から見える世界</h4>
 <p>「データ駆動」から見える世界は、私たちがプロダクトの中で見たことがない「優れた価値」「隠れた価値」を「データ」というフィルターを通して見せてくれる世界です。</p>
-<p>この世界は「優れた価値」をもとに組織全体がデータに基づく意思決定をしていて、「データ」を主軸に皆が同じ方向を向いている世界です。<br>プロダクトに関する意思決定には「ブレ」が多く存在します。特に直感や経験で動いているとそれぞれの人がもつバックグラウンドも違うため、様々な思いが存在して意思決定を統一することが難しくなってきます。<br>それを「データ駆動」の考え方をもとに「データ」を主軸にすることでスムーズにすばやく効率よく意思決定を行うことができます。</p>
-<p>では「優れた価値」を発掘するためにはどうすれば良いでしょうか。<br>ひとつの解としては、膨大な「データ」を特定のプロセス、モデルを通すことで「駆動」させ、より多くの価値がある「データ」を作り上げていく方法です。<br><br>データが「駆動」するとは「データ」を見ることで次の行動が見えてくることです。<br>つまり、プロダクトの未来をデータが駆動することで予測可能になるのです。<br>その予測をもとに戦略を作り、仮説を立案してアジャイル開発を取り入れながら開発→リリースからの「データ」から学習するといったループを回すことで予測精度はより高くなります。<br>「不確実性」を「データ」という武器を手にしながらアジャイル開発でプロダクトを構築していきます。<br><br>これが「データ駆動」という考え方です。<br>今まで「直感」や「経験」でしか考えられなかった問題に対して「データ」という武器を持つことで、より多くの「解」が得られるようになります。</p>
+<p>この世界では「優れた価値」をもとに組織全体がデータに基づく意思決定をしていて、「データ」を主軸に皆が同じ方向を向いています。
+通常、プロダクトに関する意思決定には多くの「ブレ」が存在します。特に直感や経験で動いているとそれぞれの人がもつバックグラウンドも違うため、様々な思いが存在し意思決定を統一することが難しくなってきます。それを「データ」を主軸にすることでスムーズにすばやく効率よく意思決定を行うことができます。</p>
+<p>では「優れた価値」を発掘するためにはどうすれば良いでしょうか。<br>ひとつの解としては、膨大な「データ」を特定のプロセス、モデルを通すことで「駆動」させ、より多くの価値がある「データ」を作り上げていきます。
+この価値がある「データ」をどれだけ多く発見できるかがプロダクト開発の「不確実性」を下げるかに影響してきます。</p>
+<p>一方、データが「駆動」するとは「データ」を見ることで次の行動が見えてくることです。
+つまり、プロダクトの未来をデータが駆動することで予測可能になるのです。<br>その予測をもとに戦略を作り、仮説を立案して「アジャイル開発」を取り入れながら開発をしてリリースします。そしてリリース後の「データ」から学習するといったループを回すことで予測精度はより高くなります。
+不確実性を「データ」という武器を手にしながら「アジャイル開発」でプロダクトを構築していきます。
+<br>これが「データ駆動」という考え方です。
+今まで「直感」や「経験」でしか考えられなかった問題に対して「データ」という武器を持つことで、より多くの「解」が得られるようになります。</p>
 <h4 id="-">「データ駆動戦略」がプロダクトをグロースさせる　</h4>
-<p>「直感」や「経験」だけでは、持続可能なビジネスを続けることは難しいです。<br>特にプロダクトをローンチしてから、グロースさせるフェーズになると「直感」や「経験」だけでは競争に勝てず「データ駆動」の考え方がとても大事になってきます。<br></p>
-<p>スタートアップ企業では、プロダクトをローンチし終えると、手元にある資金が尽きる前に利益を上げながらグロースさせなければサービスを維持できません。もちろん、エンタープライズ企業でも同じことが言えますが、どんなアイデアマンでも「直感」や「経験」で次々ヒットする機能をリリースすることは難しいでしょう。<br>そこで、「データ駆動」を組織戦略の中心に置くことで仮説・施策のヒット率は上げて、持続可能なビジネスへと育て上げていきます。<br></p>
-<p>「データ」は、ユーザーの声が一番反映されているファクターです。<br><br>時には、ユーザーの感覚を超えて無意識な行動がログベースで集約させていきます。それを探索的にデータ分析することで、本当にユーザーが求めていることは何かが可視化されます。<br>また、直感的に立案した仮説も「データ」を加えることで、より仮説の妥当性を担保することもできます。</p>
-<p>私を含めた人の多くは、普通の人だということを忘れてはいけません。<br><br>私個人でいえば、ごく普通のエンジニアが優れた経営者、優れたプロダクトマネージャー、優れたプロダクトオーナーと競合する中でプロダクト戦略を考えていくには少なくとも「データ」という武器を持つ必要があります。<br></p>
+<p>「直感」や「経験」だけでは、持続可能なビジネスを続けることは難しいです。
+特にプロダクトをローンチしてから、グロースさせるフェーズになると「直感」や「経験」だけでは競争に勝てず「データ駆動」の考え方がとても大事になってきます。<br></p>
+<p>スタートアップ企業では、プロダクトをローンチし終えると、手元にある資金が尽きる前に利益を上げながらグロースさせなければサービスを維持できません。もちろん、エンタープライズ企業でも同じことが言えますが、どんなアイデアマンでも「直感」や「経験」で次々ヒットする機能をリリースすることは難しいでしょう。
+そこで、「データ駆動」を組織戦略の中心に置くことで仮説・施策のヒット率は上げて、持続可能なビジネスへと育て上げていきます。<br></p>
+<p>「データ」は、ユーザーの声が一番反映されているファクターです。<br>
+時には、ユーザーの感覚を超えて無意識な行動がログベースで集約させていきます。それを探索的にデータ分析することで、本当にユーザーが求めていることは何かが可視化されます。
+また、直感的に立案した仮説も「データ」を加えることで、より仮説の妥当性を担保することもできます。</p>
+<p>一方、直感や経験による仮説立案や意思決定が悪いということではありません。世の中には、さまざまなイノベーションやプロダクトを自身のひらめきで実行できる人たちが存在します。
+しかし、私を含めた人の多くは、普通の人だということを忘れてはいけません。<br>私個人でいえば、ごく普通のエンジニアが優れた経営者、優れたプロダクトマネージャー、優れたプロダクトオーナーと競合する中で少なくとも「データ」という武器を持ちプロダクト戦略を考えていくことが必要だと思うのです。<br></p>
 <h4 id="-">「 データ駆動戦略」には強固な組織体制が必要</h4>
-<p>「データ駆動戦略」を実現するには、必ず強固な組織体制が必要となってきます。<br>組織の中で、データアナリストなどデータに関わる人だけでは、影響力が局所的な部分でとどまってしまいます。<br><br>組織にいる全員が「データに基づく意思決定」の重要性を理解して、本書で述べていくプロセスを実践していかなければなりません。</p>
-<p>この書籍は、データアナリスト、データサイエンティストだけを対象読者とした書籍ではありません。<br><br>組織の中にいるエンジニア、ディレクション、営業、カスタマーサポート、人事、総務などのバックオフィス、すべての人に読んでもらうために書いた書籍です。</p>
+<p>では「データ駆動」な戦略を立案して実現するには何が必要でしょうか。
+多くの要素がありますが、一番大事なのは強固な組織体制です。</p>
+<p>組織の中で、データアナリストなどデータに関わる人だけでは、影響力が局所的な部分でとどまってしまいます。組織にいる全員が「データに基づく意思決定」の重要性を理解して、本書で述べていくプロセスを実践していかなければなりません。</p>
+<p>この書籍は、データアナリスト、データサイエンティストだけを対象読者とした書籍ではありません。組織の中にいるプロダクトマネージャー、エンジニア、ディレクション、営業、カスタマーサポート、人事、総務などのバックオフィス、すべての人に読んでもらうために書いた書籍です。</p>
 <p>本書を通じて「データ駆動戦略」に関する理解を深め、組織に導入する際に必要な考え方、実現方法を把握することで、より良いプロダクトを成長させる手助けになれば幸いです。</p></body>
 </html>
